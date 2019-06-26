@@ -1,0 +1,37 @@
+Nao criei uma tabela tb_cliente com crud separada da pedido pois não terei tempo de finalizar. (Semana Corrida). Muitas coisas poderiam ser adicionadas a mais como a validação se o id de pizza existe antes de criar o pedido mas devido ao tempo como citado nao pude adicionar (Fiz tudo em 2:00).
+Estou anexando junto um arquivo com a foto do esquema do banco e um sql para importacao e testes.
+
+A api espera  o Json via post num campo chamado "json"
+
+Testar Inserção de Pizza
+/pizza/add.php
+{"sabor":"portuguesa","tamanho":"P"}
+
+Testar Seleção de Pizza
+/pizza/select.php
+{"sabor":"portuguesa","tamanho":"P"}
+
+Testar atualização de pizza
+/pizza/edit.php
+{"sabor":"calabresa","tamanho":"G","saborPesquisa":"portuguesa","tamanhoPesquisa":"P"},
+
+Testar Remoção de pizza
+/pizza/remove.php
+{"sabor":"calabresa","tamanho":"G"}
+
+Testar insercao de Pedido
+/pedido/add.php
+{"pizzaId":6,"telefone":"992304707","nome":"Daniel Fiedler","endereco":"Rua Dez Mil 1998, Eldorado"}
+
+Testar Pesquisa de pedido sem filtro de entregue
+/pedido/select.php
+{"telefone":"992304707"}
+
+Testar Pesquisa de pedido com filtro de entregue
+/pedido/select.php
+{"telefone":"992304707","entregue":true}
+{"telefone":"992304707","entregue":false}
+
+Finalizar Pedido
+/pedido/finish.php
+{"telefone":"992304707","nome":"Daniel Fiedler"}
